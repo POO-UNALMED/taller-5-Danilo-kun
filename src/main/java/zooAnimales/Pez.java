@@ -1,24 +1,15 @@
 package zooAnimales;
 
 import gestion.Zona;
-
+import java.util.*;
 public class Pez extends Animal {
-	private static Pez[] listado;
+	private static List<Pez>listado=new ArrayList<>();
 	public static int salmones;
 	public static int bacalaos;
 	private String colorEscamas;
 	private int cantidadAletas;
 	public static int cantidadPeces() {
-		if(listado!=null){
-			int aux=0;
-			for(int i=0;i<listado.length;i++) {
-				aux+=1;
-			}
-			return aux;
-		}
-		else {
-			return 0;
-		}
+		return listado.size();
 	}
 	Pez(String i,int j, String g) {
 		nombre=i;
@@ -26,6 +17,7 @@ public class Pez extends Animal {
 		genero=g;
 	}
 	public Pez() {
+		listado.add(this);
 	}
 	public Pez(String string, int i, String string2, String string3, String string4, int j) {
 		nombre=string;
@@ -34,6 +26,7 @@ public class Pez extends Animal {
 		genero=string3;
 		colorEscamas=string4;
 		cantidadAletas=j;
+		listado.add(this);
 	}
 	public String movimiento() {
 		return "nadar";

@@ -1,30 +1,23 @@
 package zooAnimales;
 
 import gestion.Zona;
-
+import java.util.*;
 public class Ave extends Animal {
-	private static Ave[] listado;
+	private static List<Ave> listado=new ArrayList<>();
 	public static int halcones;
 	public static int aguilas;
 	private String colorPlumas;
 	public static int cantidadAves() {
-		if(listado!=null){
-			int aux=0;
-			for(int i=0;i<listado.length;i++) {
-				aux+=1;
-			}
-			return aux;
-		}
-		else {
-			return 0;
-		}
+		return listado.size();
 	}
 	Ave(String i,int j, String g) {
 		nombre=i;
 		edad=j;
 		genero=g;
+		listado.add(this);
 	}
 	public Ave() {
+		listado.add(this);
 	}
 	public Ave(String string, int i, String string2, String string3, String string4) {
 		nombre=string;
@@ -32,6 +25,7 @@ public class Ave extends Animal {
 		habitat=string2;
 		genero=string3;
 		colorPlumas=string4;
+		listado.add(this);
 	}
 	public String movimiento() {
 		return "volar";
