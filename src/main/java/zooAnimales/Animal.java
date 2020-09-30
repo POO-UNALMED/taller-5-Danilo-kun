@@ -6,7 +6,7 @@ public class Animal {
 	protected int edad;
 	protected String habitat;
 	protected String genero;
-	protected Zona[] zona;
+	protected Zona zona;
 	public Animal(String string, int i, String string2, String string3) {
 		nombre=string;
 		edad=i;
@@ -23,7 +23,7 @@ public class Animal {
 	}
 	public String toString(){
 		if(zona!=null) {
-			return "Mi nombre es "+this.nombre+", tengo una edad de "+this.edad+", habito en "+this.habitat+" y mi genero es "+this.genero+", la zona en la que me ubico es "+this.zona+", en el "+Zoologico.getNombre();
+			return "Mi nombre es "+this.nombre+", tengo una edad de "+this.edad+", habito en "+this.habitat+" y mi genero es "+this.genero+", la zona en la que me ubico es "+this.zona+", en el "+zona.getZoo().getNombre();
 		}
 		else {
 			return "Mi nombre es "+this.nombre+", tengo una edad de "+this.edad+", habito en "+this.habitat+" y mi genero es "+this.genero;

@@ -1,7 +1,7 @@
 package gestion;
 import java.util.*;
 public class Zoologico {
-	private static String nombre;
+	private String nombre;
 	private String ubicacion;
 	private static List<Zona> zonas=new ArrayList<>();
 	public Zoologico(){
@@ -26,10 +26,10 @@ public class Zoologico {
 			return 0;
 		}
 	}
-	public static String getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
-	public Object getZona() {
+	public List<Zona> getZona() {
 		return zonas;
 	}
 }
